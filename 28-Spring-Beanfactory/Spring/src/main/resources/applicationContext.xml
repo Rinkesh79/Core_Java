@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+    <bean id="information" class="com.qac.rinkesh.Spring.dto.Informationdto">
+        <property name="id" value="3"></property>
+        <property name="name" value="zeel"></property>
+        <property name="email" value="zeel123@gmail.com"></property>
+    
+    </bean>  
+    
+     <bean id="information1" class="com.qac.rinkesh.Spring.dto.Informationdto">
+        <constructor-arg value="4" type="int"></constructor-arg>
+        <constructor-arg value="Galu" type="String"></constructor-arg>
+        <constructor-arg value="galu123@gmail.com" type="String"></constructor-arg>
+     
+     </bean>
+
+    
+
+</beans>
