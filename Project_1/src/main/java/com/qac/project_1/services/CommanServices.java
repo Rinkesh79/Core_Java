@@ -1,5 +1,7 @@
 package com.qac.project_1.services;
 
+
+import java.util.List;
 import com.qac.project_1.dto.CustomerDTO;
 import com.qac.project_1.dto.ForgetPasswordDTO;
 import com.qac.project_1.dto.RegisterDTO;
@@ -21,4 +23,6 @@ public interface CommanServices {
 	public ProCustomerDetail  getallticket(String email);
 	
 	public String validateAndUpdatePassword(ForgetPasswordDTO fdto);
+	
+	public List<ProCustomerDetail> getopentickets(String statuse);
 }

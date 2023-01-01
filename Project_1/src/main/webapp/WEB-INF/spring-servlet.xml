@@ -30,8 +30,9 @@
         <property name="dataSource" ref="dsource"></property>
         <property name="annotatedClasses" >
             <list>
+             <value>com.qac.project_1.entity.ProCustomerDetail</value>
                 <value>com.qac.project_1.entity.ProRegDetail</value>
-                <value>com.qac.project_1.entity.ProCustomerDetail</value>
+               
             </list>
         
         </property>

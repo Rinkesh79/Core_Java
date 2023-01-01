@@ -3,11 +3,13 @@ package com.qac.project_1.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import java.util.List;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.qac.project_1.entity.ProCustomerDetail;
+
 
 @Repository
 public class CoustomerDAOImpl  implements CustomerDAO{
@@ -42,6 +44,21 @@ public class CoustomerDAOImpl  implements CustomerDAO{
 		return entity;
 		
 	}
+	
+	public List<ProCustomerDetail> checkbystatuse(String statuse)
+	{
+		Session session =sessionfactory.openSession();
+		
+		String query2="FROM ProCustomerDetail Where statuse='"+statuse+"'";
+		Query qu2 = session.createQuery(query2);
+		
+		 List<ProCustomerDetail> entity = qu2.getResultList();
+		 System.out.println(entity);
+		 session.close();
+		return entity;
+
+	}
+
 	
 	
 }

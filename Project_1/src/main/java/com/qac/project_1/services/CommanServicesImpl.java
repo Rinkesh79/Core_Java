@@ -1,6 +1,7 @@
 package com.qac.project_1.services;
 
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -178,11 +179,7 @@ public class CommanServicesImpl implements CommanServices{
 					ProRegDetail entity= dao.checkbyemail(email);
 					if (entity != null)
 					{
-						//Random random=new Random();
-						//int otp=random.nextInt(9999);
-						//String otp=String.format("%04d", random.nextInt(9999));
-						//System.out.println(otp);
-						
+			
 						int otp=util.generateotp();
 						util.sendMsg(email, otp);
 						
@@ -216,11 +213,8 @@ public class CommanServicesImpl implements CommanServices{
 							data.setEmail(cdto.getEmail());
 							data.setModel(cdto.getModel());
 							data.setIssue(cdto.getIssue());
-							
-							//data.setStatuse("open");
-							
-							//data.setCreationdate("LocalDateTime.now()");
-							
+							data.setStatuse("open");
+							data.setCreationdate("LocalDateTime.now()");
 							cdao.save(data);
 							return "Ticket Created";
 						}
@@ -321,7 +315,13 @@ public class CommanServicesImpl implements CommanServices{
 			}
 			
 			
-			
+			public List<ProCustomerDetail> getopentickets(String statuse)
+			{
+				
+				List<ProCustomerDetail> entity=(List<ProCustomerDetail>) cdao.checkbystatuse(statuse);
+				System.out.println(entity);
+				return entity;
+			}
 			
 			
 			

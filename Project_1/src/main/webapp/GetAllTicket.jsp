@@ -146,7 +146,7 @@
                   
                
                   <tr><td><label>Email:-</label></td>
-                  <td><input type="text" name="email" onblur="display()" ppattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$" title=" Enter valid Email ID"></td></tr>
+                  <td><input type="text" name="email"  pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$" title=" Enter valid Email ID"></td></tr>
                   
                   
         
@@ -158,7 +158,7 @@
     
             </div>
              
-            <div id="data" style=" display: none;">
+            <div id="data" >
             Email id:-${msg.email}<br>Model:-${msg.model}<br>Issue:-${msg.issue}<br>
             
            </div>
@@ -176,28 +176,12 @@
     </div>
 
 
-<script type="text/javascript">
 
-function display()
-{
-    var detail=document.getElementById("data");
-    console.log("functionall");
-    if(detail.style.display=="none")
-    {
-        detail.style.display="block";
-    }
-    else
-    {
-       detail.style.display="none"; 
-    }
-
-}
     
 
     
 
 
-</script>
 
 
 

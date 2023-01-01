@@ -9,10 +9,10 @@
 <style type="text/css">
 
     *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: auto;
+    	margin: 0;
+    	padding: 0;
+   		box-sizing: border-box;
+    	overflow: auto;
     }
     
     
@@ -26,22 +26,22 @@
     #button
     {
         padding:5px;
-       
         text-align: right;  
     }
     
-    #header h1{
-    margin-top:5px;
-    color: White;
+    #header h1
+    {
+    	margin-top:5px;
+    	color: White;
     }
     
     
     #button a
     {
-     background-color: White;
-    color: green;
-    padding: 10px 15px;
-    text-align: center;
+     	background-color: White;
+    	color: green;
+    	padding: 10px 15px;
+    	text-align: center;
     }
     
     
@@ -53,31 +53,27 @@
         text-align:center;
         margin:auto;
         display: table;
-  
-       
+ 
     }
 
 
     #form a
     {
-     background-color: White;
-    color: green;
-  padding: 10px;
-    text-align: center;
+     	background-color: White;
+    	color: green;
+  		padding: 10px;
+    	text-align: center;
     }
     
-    #form{
-    
-    padding: 20px;
+    #form
+    {
+       	padding: 20px;
     }
-  
+
     
-   
-    
-    
-   #footer{
-    
-            position: fixed;
+   #footer
+   {
+          position: fixed;
           left: 0;
           bottom: 0;
           width: 100%;
@@ -85,17 +81,14 @@
           color: white;
           text-align: center;
     
-        }
- #footer a{
-            color: White;
-        }
+   }
+   
+   #footer a
+   {
+          color: White;
+   }
     
     </style>
-
-
-
-
-
 
 </head>
 <body>
@@ -128,10 +121,9 @@
     
     
     <div id="bd">
+ 
+    <h3 style="color:blue">${msg}</h3>
     
-    
-    
-      <h3 style="color:blue">${msg}</h3>
     <form id="form" action="customernewticket" method="post">
 
             
@@ -150,7 +142,7 @@
                    <td><input type="text" name="issue"></td></tr>
                   
         
-       </table>
+       		</table>
     
             <div id="button" style="text-align: left ; margin-left:65px; padding: 20px;">
                 <input type="submit" value="Creat Ticket" name="creatticket">
@@ -164,9 +156,11 @@
 
 
     <div id="footer">
+    
         <h1>Info</h1>
         <a>qactecbang@gmail.com</a>
         <a>+918160881122</a>
+        
     </div>
 
 

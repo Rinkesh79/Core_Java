@@ -180,7 +180,7 @@
                     <option value="admin">Admin</option>
                   </select></td></tr> 
                   
-                  <tr><td style="padding-left:110px;"><input type="checkbox" id="ckbox1" onclick="boxchnage()" ></td>
+                  <tr><td style="padding-left:110px;"><input type="checkbox" id="ckbox1"  ></td>
                   <td><label>Tearms and Condition</label></td></tr>
         
                   
@@ -204,21 +204,7 @@
     </div>
 
 
-<script type="text/javascript">
-function emailvalidation()
-{
 
-    var email=document.getElementsByName("email")[0].value;
-    var formate = "^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$";
-    if(!email.match(formate))
-    	{
-    alert ("Enter valid Email Id");
-    document.getElementsByName("email")[0].value="";
-    	}
-}
-
-
-</script>
 
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.qac.project_1.controler;
 
-import com.mysql.cj.jdbc.Driver;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,11 +46,8 @@ public class Procontroler {
 		String msg= service.validateAndLogin(dto);
 		System.out.println(msg);
 		
-		
 		modelAndView.addObject("msg",msg);
-		
-		
-		
+
 		if(dto.getProfile().equals("customer") && msg.contains(".com"))
 		{
 			modelAndView.setViewName("/CustomerHome.jsp");
@@ -59,7 +58,7 @@ public class Procontroler {
 		} 
 		else if (dto.getProfile().equals("admin"))
 		{
-			//list(ticket> ticket=service.getallticket();
+			
 			modelAndView.setViewName("/Admin.jsp");
 		}
 		else
@@ -82,9 +81,7 @@ public class Procontroler {
 		
 		return modelAndView;
 	}
-	
-	
-	
+
 	@RequestMapping(value ="/customernewticket" , method = RequestMethod.POST)
 	public ModelAndView Customerdatasave(CustomerDTO cdto)
 	{
@@ -97,8 +94,7 @@ public class Procontroler {
 		
 		return modelAndView;
 	}
-	
-	
+
 	@RequestMapping(value ="/getprofile/{id}" , method = RequestMethod.GET)
 	public ModelAndView getprofile(@PathVariable("id") String id)
 	{
@@ -113,19 +109,6 @@ public class Procontroler {
 	}
 	
 	
-	
-	@RequestMapping(value ="/getallticket" , method = RequestMethod.POST)
-	public ModelAndView getallticket(String email)
-	{
-
-		ProCustomerDetail msg =service.getallticket(email);
-		System.out.println(msg);
-		ModelAndView modelAndView=new ModelAndView();
-		modelAndView.addObject("msg",msg);
-		modelAndView.setViewName("/GetAllTicket.jsp");
-		
-		return modelAndView;
-	}
 	
 	@RequestMapping(value="/forgrtpassword" , method= RequestMethod.POST)
 	public ModelAndView forgetpPassword(ForgetPasswordDTO fdto)
@@ -143,7 +126,34 @@ public class Procontroler {
 			modelAndView.setViewName("/ForgetPassword.jsp");
 		}
 		return modelAndView;
+	}
+
+	
+	@RequestMapping(value ="/getallticket" , method = RequestMethod.POST)
+	public ModelAndView getallticket(String email)
+	{
+
+		ProCustomerDetail msg =service.getallticket(email);
+		System.out.println(msg);
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.addObject("msg",msg);
+		modelAndView.setViewName("/GetAllTicket.jsp");
 		
+		return modelAndView;
+	}
+	
+	
+	@RequestMapping(value="/getallopenticket" , method = RequestMethod.POST)
+	public ModelAndView openticket(String statuse)
+	{
+		System.out.println(statuse);
 		
+		List <ProCustomerDetail> msg= service.getopentickets(statuse);
+		System.out.println(msg);
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.addObject("msg",msg);
+		modelAndView.setViewName("/Admin.jsp");
+		
+		return modelAndView;
 	}
 }
